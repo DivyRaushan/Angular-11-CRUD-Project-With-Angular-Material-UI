@@ -1,0 +1,62 @@
+{
+  "posts": [
+    {
+      "productName": "Oneplus 7T 256GB",
+      "productType": "electronic",
+      "productDate": "2023-01-17T18:30:00.000Z",
+      "productFreshness": "Second Hand",
+      "productPrice": 42999,
+      "productComments": "This is a second hand oneplus 7t",
+      "id": 2
+    },
+    {
+      "productName": "PS4",
+      "productType": "electronic",
+      "productDate": "2023-01-12T18:30:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 29999,
+      "productComments": "Play Station 4",
+      "id": 4
+    },
+    {
+      "productName": "Carrots",
+      "productType": "vegetable",
+      "productDate": "2022-12-06T18:30:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 40,
+      "productComments": "Carrot",
+      "id": 5
+    },
+    {
+      "productName": "Apple Iphone 6s",
+      "productType": "electronic",
+      "productDate": "2023-01-30T18:30:00.000Z",
+      "productFreshness": "Refurbished",
+      "productPrice": 18999,
+      "productComments": "Refurbished iPhone",
+      "id": 6
+    },
+    {
+      "productName": "Mechanical Keyboard",
+      "productType": "electronic",
+      "productDate": "2022-08-25T18:30:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 3599,
+      "productComments": "This is brand new rgb keyboard ",
+      "id": 7
+    },
+    {
+      "productName": "Boat Earphone",
+      "productType": "electronic",
+      "productDate": "2016-11-09T18:30:00.000Z",
+      "productFreshness": "Refurbished",
+      "productPrice": 449,
+      "productComments": "This is a refurbished earphone",
+      "id": 10
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
