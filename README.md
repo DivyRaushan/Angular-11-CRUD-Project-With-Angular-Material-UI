@@ -1,3 +1,9 @@
+It is an angular based web application which is similar to online marketplaces like OLX, quikr etc. Using this app user can add products which they want to sell. Once the products are added successfully then the same will be updated live on a table.
+• This app also consists of login and signup page with authentication. Before logging in user cannot move further.
+• FRAMEWORK USED - ANGULAR
+• MAJOR CONCEPT USED - ANGULAR CRUD OPERATION, ANGULAR MATERIAL UI, ANGULAR SERVICES, REACTIVE FORMS, FORM VALIDATION, ROUTING, VIEW CHILD, DIRECTIVES, PIPES etc.
+• DEVELOPMENT PLATFORM USED - VISUAL STUDIO CODE
+
 # AngularCrud
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.4.
