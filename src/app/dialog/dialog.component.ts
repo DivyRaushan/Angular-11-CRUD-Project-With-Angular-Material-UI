@@ -63,6 +63,7 @@ export class DialogComponent implements OnInit {
               alert("Product added successfully")
               this.fG.reset();
               this.dialogRef.close("added");
+              this.api.productData()
 
             },
             error: () => {

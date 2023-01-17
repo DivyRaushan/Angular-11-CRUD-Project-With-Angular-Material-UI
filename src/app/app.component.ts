@@ -5,6 +5,7 @@ import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table'
 import { ApiService } from './services/api.service';
+import { TableComponent } from './table/table.component';
 
 @Component({
   selector: 'app-root',
@@ -14,73 +15,75 @@ import { ApiService } from './services/api.service';
 export class AppComponent implements OnInit {
   title = 'AngularCrud';
   data: any
-  displayedColumns: string[] = ['productName', 'productType', 'productDate', 'productFreshness', 'productPrice', 'productComments', 'actions'];
-  dataSource!: MatTableDataSource<any>;
+  loginStatus = true;
+  
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild('childView')child:TableComponent;
 
 
-  constructor(public dialog: MatDialog, private api: ApiService) {
+  constructor(public dialog: MatDialog, public api: ApiService) {
 
-  }
-  ngOnInit() {
-    this.getAllProduct();
-  }
-
-  getAllProduct() {
-    this.api.getData()
-      .subscribe({
-        next: (res: any) => {
-          this.dataSource = new MatTableDataSource(res);
-          this.dataSource.paginator = this.paginator
-        },
-        error: (err) => {
-          alert("Error while fetching the data");
-        }
-      })
-  }
-
-  editProduct(element: any) {
-    this.dialog.open(DialogComponent, {
-
-      width: '30%',
-      height: '500px',
-      data: element
-
-    }).afterClosed().subscribe({
-      next: (value) => {
-        if (value === "updated") {
-          this.getAllProduct();
-        }
-      }
-    });
+    // this.api.status.subscribe((resData:boolean)=>
+    // {
+    //   this.loginStatus = resData
+    //   console.log(this.loginStatus)
+    // })
 
   }
+  ngOnInit():void {
 
-  deleteProduct(element: number) {
-    this.api.deleteData(element)
-      .subscribe(
-        (res) => {
-          alert("Product deleted successfully")
-          this.getAllProduct();
-        }
-      )
-  }
+    // this.loginStatus = localStorage.getItem("session") ==="true"? false:true
+    // this.api.status.subscribe((resData:boolean)=>
+    // {
+    //   this.loginStatus = resData
+    //   console.log(this.loginStatus)
+    // })
 
+    // this.api.changeStatus(true)
 
+    
+
+    // this.api.getStatus();
+
+    // this.api.status.subscribe((data:boolean)=>
+    // {
+    //   console.log(data)
+    // })
+  
+  } 
   openDialog() {
     this.dialog.open(DialogComponent, {
 
       width: '30%',
       height: '500px'
 
-    }).afterClosed().subscribe({
-      next: (value) => {
-        if (value === "added") {
-          this.getAllProduct();
-        }
-      }
     })
+    // .afterClosed().subscribe({
+    //   next: (value) => {
+    //     if (value === "added") {
+    //       this.child.getAllProduct();
+    //     }
+    //   }
+    // })
   }
+
+  logOutHide(){
+    this.api.setStatusValue(true)
+  }
+
+  // logOut()
+  // {
+  //   this.api.changeStatus()
+  //   this.api.getStatus()
+  //   this.api.status.subscribe((data:boolean)=>
+  //   {
+  //     this.loginStatus=data;
+  //   })
+  // }
+
+  // logoutFlag()
+  // {
+  //   this.api.changeFlag
+  // }
 
 }

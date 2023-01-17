@@ -6,7 +6,7 @@
       "productDate": "2023-01-17T18:30:00.000Z",
       "productFreshness": "Second Hand",
       "productPrice": 42999,
-      "productComments": "This is a second hand oneplus 7t",
+      "productComments": "This is a second hand oneplus 7t !",
       "id": 2
     },
     {
@@ -53,10 +53,37 @@
       "productPrice": 449,
       "productComments": "This is a refurbished earphone",
       "id": 10
+    },
+    {
+      "productName": "Laptopss",
+      "productType": "electronic",
+      "productDate": "2020-10-21T18:30:00.000Z",
+      "productFreshness": "Second Hand",
+      "productPrice": 23000,
+      "productComments": "This is a second hand laptop !!",
+      "id": 12
+    },
+    {
+      "productName": "jjk",
+      "productType": "vegetable",
+      "productDate": "2023-01-30T18:30:00.000Z",
+      "productFreshness": "Brand New",
+      "productPrice": 78,
+      "productComments": "kjnsfd",
+      "id": 13
     }
   ],
   "comments": [],
-  "profile": {
-    "name": "typicode"
-  }
+  "profile": [
+    {
+      "emailFormControl": "hs68217@gmail.com",
+      "passwordFormControl": "7116king",
+      "id": 1
+    },
+    {
+      "emailFormControl": "kinghapking@gmail.com",
+      "passwordFormControl": "12345678",
+      "id": 2
+    }
+  ]
 }

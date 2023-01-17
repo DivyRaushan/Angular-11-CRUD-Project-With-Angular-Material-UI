@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="api.dataSource">
+  
+        <!-- Name Column -->
+        <ng-container matColumnDef="productName">
+          <th mat-header-cell *matHeaderCellDef> Product Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+        </ng-container>
+  
+        <!-- Type Column -->
+        <ng-container matColumnDef="productType">
+          <th mat-header-cell *matHeaderCellDef> Category </th>
+          <td mat-cell *matCellDef="let element"> {{element.productType}} </td>
+        </ng-container>
+        <!-- Date Column -->
+        <ng-container matColumnDef="productDate">
+          <th mat-header-cell *matHeaderCellDef> Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.productDate | date:'d-LLL-YYYY' }} </td>
+        </ng-container>
+        <!-- Freshness Column -->
+        <ng-container matColumnDef="productFreshness">
+          <th mat-header-cell *matHeaderCellDef> Condition </th>
+          <td mat-cell *matCellDef="let element"> {{element.productFreshness}} </td>
+        </ng-container>
+        <!-- Price Column -->
+        <ng-container matColumnDef="productPrice">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.productPrice | currency:'INR'}} </td>
+        </ng-container>
+        <!-- Comments Column -->
+        <ng-container matColumnDef="productComments">
+          <th mat-header-cell *matHeaderCellDef> Comments </th>
+          <td mat-cell *matCellDef="let element"> {{element.productComments}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <button (click)="editProduct(element)" mat-icon-button color="primary">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button (click)="deleteProduct(element.id)" mat-icon-button color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+  
+  </div>

@@ -1,0 +1,47 @@
+<form [formGroup]="signup" class="example-form">
+
+    <h1><strong>SIGNUP HERE</strong></h1>
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Enter Your Email</mat-label>
+      <input type="email" matInput formControlName="emailFormControl" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="signup.hasError('email','emailFormControl')">
+        Please enter a valid email address
+      </mat-error>
+
+      <mat-error *ngIf="signup.hasError('required','emailFormControl')">
+        Email is <strong>required</strong>
+      </mat-error>
+
+
+      <!-- <mat-error *ngIf="login.get('emailFormControl').hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error> -->
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Enter Your Password</mat-label>
+        <input formControlName="passwordFormControl" matInput [type]="hide ? 'password' : 'text'" >
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="signup.hasError('required','passwordFormControl')">
+          Password is <strong>required</strong>
+        </mat-error>
+    
+        <mat-error *ngIf="signup.hasError('minlength','passwordFormControl')">
+          Password must be greater than 8 digits
+        </mat-error>
+        <!-- <mat-error *ngIf="passwordrFormControl.hasError('minlength') && !passwordrFormControl.hasError('required')">
+            Password must be greater than 8 digits
+          </mat-error> -->
+        <!-- <mat-error *ngIf="passwordrFormControl.hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error> -->
+
+      </mat-form-field>
+      
+      <button [disabled]="!signup.valid" mat-raised-button color="primary" (click)="signupButton()">Sign Up</button>
+      <button (click)="resetSignUp()" mat-icon-button color="warn" matTooltip="Reset this form"><mat-icon>cancel</mat-icon></button>
+      <button (click)="alreadyAccount()" mat-flat-button color="accent">Already have an account !!</button>
+  </form>

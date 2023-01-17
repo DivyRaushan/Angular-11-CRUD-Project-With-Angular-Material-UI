@@ -19,14 +19,20 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
-
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { TableComponent } from './table/table.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogComponent
+    DialogComponent,
+    LoginComponent,
+    SignupComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,9 @@ import {MatTableModule} from '@angular/material/table';
     FormsModule,
     HttpClientModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatTooltipModule,
+    FormsModule
    
         
   ],
